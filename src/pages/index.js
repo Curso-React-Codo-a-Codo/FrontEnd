@@ -4,12 +4,12 @@ import { Inter } from 'next/font/google'
 import styles from '@/styles/Home.module.css'
 import Card  from '@/componentes/card'
 import { useEffect, useState } from 'react'
+import Clock from '@/componentes/clock'
 
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
   /*esto es una promesa para obtener datos desde un backend*/
-
 
 const [info, setInfo] = useState();
   useEffect(()=>{
@@ -29,6 +29,7 @@ if (info === undefined){
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={styles.main}>
+        <Clock> </Clock>
         Hola Mundo
         {
           info.map(  element =>(
@@ -40,3 +41,5 @@ if (info === undefined){
     </>
   )
 }
+
+//setInterval( sadfsfsdf ,1000) //Cada x segundos llama a esa funcion
