@@ -4,7 +4,7 @@ import { Inter } from 'next/font/google'
 import styles from '@/styles/Home.module.css'
 import Card from '@/componentes/card'
 import { useEffect, useState } from 'react'
-import Clock from '@/componentes/clock'
+import Clock from '@/componentes/Clock'
 
 const inter = Inter({ subsets: ['latin'] })
 

@@ -1,3 +1,4 @@
+import React from 'react'// este lo hace nextjs automatico
 export default function Card (props) {
   return (
         <>
