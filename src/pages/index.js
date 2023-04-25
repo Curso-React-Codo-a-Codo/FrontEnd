@@ -2,24 +2,24 @@ import Head from 'next/head'
 import Image from 'next/image'
 import { Inter } from 'next/font/google'
 import styles from '@/styles/Home.module.css'
-import Card  from '@/componentes/card'
+import Card from '@/componentes/card'
 import { useEffect, useState } from 'react'
 import Clock from '@/componentes/clock'
 
 const inter = Inter({ subsets: ['latin'] })
 
-export default function Home() {
-  /*esto es una promesa para obtener datos desde un backend*/
+export default function Home () {
+  /* esto es una promesa para obtener datos desde un backend */
 
-const [info, setInfo] = useState();
-  useEffect(()=>{
-     fetch("https://rickandmortyapi.com/api/character/136")
-    .then(response => response.json())
-    .then(data => setInfo([data]))
-  },[]);
-if (info === undefined){
-  return <div>Loading...</div>
-}
+  const [info, setInfo] = useState()
+  useEffect(() => {
+    fetch('https://rickandmortyapi.com/api/character/136')
+      .then(response => response.json())
+      .then(data => setInfo([data]))
+  }, [])
+  if (info === undefined) {
+    return <div>Loading...</div>
+  }
   return (
     <>
       <Head>
@@ -32,7 +32,7 @@ if (info === undefined){
         <Clock> </Clock>
         Hola Mundo
         {
-          info.map(  element =>(
+          info.map(element => (
             <Card key={element.name} name={element.name} img={element.image} ></Card>
           ))
         }
@@ -42,4 +42,4 @@ if (info === undefined){
   )
 }
 
-//setInterval( sadfsfsdf ,1000) //Cada x segundos llama a esa funcion
+// setInterval( sadfsfsdf ,1000) //Cada x segundos llama a esa funcion
