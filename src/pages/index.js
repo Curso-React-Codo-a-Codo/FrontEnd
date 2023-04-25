@@ -13,9 +13,11 @@ export default function Home() {
 
   const [info, setInfo] = useState();
   useEffect(() => {
-    fetch("https://rickandmortyapi.com/api/character/136")
+    const randomCharacter = Math.ceil(Math.random() * 826);
+    fetch("https://rickandmortyapi.com/api/character/" + randomCharacter)
       .then((response) => response.json())
       .then((data) => setInfo([data]));
+    console.log(randomCharacter);
   }, []);
   if (info === undefined) {
     return <div>Loading...</div>;
