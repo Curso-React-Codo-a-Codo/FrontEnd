@@ -5,6 +5,7 @@ import styles from "@/styles/Home.module.css";
 import Card from "@/componentes/card";
 import { useEffect, useState } from "react";
 import Clock from "@/componentes/Clock";
+import Cronometro from "@/componentes/cronometro";
 
 // const inter = Inter({ subsets: ["latin"] });
 
@@ -17,7 +18,6 @@ export default function Home() {
     fetch("https://rickandmortyapi.com/api/character/" + randomCharacter)
       .then((response) => response.json())
       .then((data) => setInfo([data]));
-    console.log(randomCharacter);
   }, []);
   if (info === undefined) {
     return <div>Loading...</div>;
@@ -33,6 +33,7 @@ export default function Home() {
       <main className={styles.main}>
         <Clock> </Clock>
         Hola Mundo
+        <Cronometro></Cronometro>
         {info.map((element) => (
           <Card
             key={element.name}
@@ -40,7 +41,6 @@ export default function Home() {
             img={element.image}
           ></Card>
         ))}
-        xd
       </main>
     </>
   );
