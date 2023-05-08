@@ -6,6 +6,7 @@ import Card from "@/componentes/card";
 import { useEffect, useState } from "react";
 import Clock from "@/componentes/Clock";
 import Cronometro from "@/componentes/cronometro";
+import ButtonPlus from "@/componentes/buttons/button_plus";
 
 // const inter = Inter({ subsets: ["latin"] });
 
@@ -34,6 +35,7 @@ export default function Home() {
         <Clock> </Clock>
         Hola Mundo
         <Cronometro></Cronometro>
+        <ButtonPlus></ButtonPlus>
         {info.map((element) => (
           <Card
             key={element.name}
