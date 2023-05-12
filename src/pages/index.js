@@ -8,6 +8,7 @@ import Clock from "@/componentes/Reloj-Cronometro/Clock";
 import Cronometro from "@/componentes/Reloj-Cronometro/cronometro";
 import ButtonPlus from "@/componentes/buttons/button_plus";
 import Footer from "@/componentes/footer/footer";
+import Navbar from "@/componentes/navbar/navbar";
 
 // const inter = Inter({ subsets: ["latin"] });
 
@@ -33,6 +34,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={styles.main}>
+        <Navbar></Navbar>
         <Clock> </Clock>
         Hola Mundo
         <Cronometro></Cronometro>
